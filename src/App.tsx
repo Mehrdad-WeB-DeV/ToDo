@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import TodoItem from "./TodoItem";
 
 type Todo = {
@@ -78,12 +78,12 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center py-10 px-4">
 
-      {/* HEADER */}
+
       <h1 className="text-3xl font-bold mb-6">
         🌿 Todo App
       </h1>
 
-      {/* INPUT SECTION */}
+
       <div className="flex gap-2 w-full max-w-md">
         <input
           className="flex-1 px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:border-emerald-500 outline-none"
@@ -100,7 +100,7 @@ function App() {
         </button>
       </div>
 
-      {/* FILTERS */}
+
       <div className="flex gap-2 mt-4">
         {["all", "active", "completed"].map((f) => (
           <button
@@ -118,7 +118,7 @@ function App() {
         ))}
       </div>
 
-      {/* EDIT MODE */}
+
       {editID !== null && (
         <div className="flex gap-2 mt-4 w-full max-w-md">
           <input
@@ -136,7 +136,6 @@ function App() {
         </div>
       )}
 
-      {/* TODO LIST */}
       <ul className="w-full max-w-md mt-6 space-y-3">
         {filteredTodos.map((todo) => (
           <TodoItem

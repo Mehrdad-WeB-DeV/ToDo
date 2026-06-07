@@ -1,43 +1,3 @@
-// import React from "react";
-
-// export default function TodoItem({  todo,  deleteTodo,  toggleTodo,  editTask,}: Props) {
-
-//   type Todo = {
-//     id: number;
-//     text: string;
-//     completed: boolean;
-//   };
-
-//   type Props = {
-//     todo: Todo;
-//     deleteTodo: (id: number) => void;
-
-//     toggleTodo: (id: number) => void;
-//     editTask: (todo: Todo) => void;
-//   };
-//   return (
-//     <>
-//       <li>
-//         <input
-//           type="checkbox"
-//           checked={todo.completed}
-//           onChange={() => toggleTodo(todo.id)}
-//           name=""
-//           id=""
-//         />
-
-//         {todo.text}
-//         <button onClick={() => deleteTodo(todo.id)}>Delete</button>
-//         <button onClick={() => editTask(todo)}>Edit</button>
-//       </li>
-//     </>
-//   );
-// }
-
-
-
-import React from "react";
-
 type Todo = {
   id: number;
   text: string;
@@ -67,10 +27,7 @@ export default function TodoItem({
       hover:shadow-lg hover:shadow-emerald-500/10
       transition-all duration-300"
     >
-      {/* LEFT SIDE */}
       <div className="flex items-center gap-3 flex-1">
-        
-        {/* Custom Checkbox */}
         <div
           onClick={() => toggleTodo(todo.id)}
           className={`w-5 h-5 flex items-center justify-center rounded-md cursor-pointer
@@ -86,23 +43,15 @@ export default function TodoItem({
           )}
         </div>
 
-        {/* Text */}
         <span
           className={`text-sm md:text-base transition-all duration-300
-          ${
-            todo.completed
-              ? "line-through text-slate-500"
-              : "text-slate-100"
-          }`}
+          ${todo.completed ? "line-through text-slate-500" : "text-slate-100"}`}
         >
           {todo.text}
         </span>
       </div>
 
-      {/* RIGHT SIDE ACTIONS */}
       <div className="flex items-center gap-2 opacity-80 group-hover:opacity-100 transition">
-        
-        {/* Edit */}
         <button
           onClick={() => editTask(todo)}
           className="px-3 py-1.5 text-xs rounded-lg
@@ -114,7 +63,6 @@ export default function TodoItem({
           Edit
         </button>
 
-        {/* Delete */}
         <button
           onClick={() => deleteTodo(todo.id)}
           className="px-3 py-1.5 text-xs rounded-lg
